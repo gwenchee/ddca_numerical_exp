@@ -1,11 +1,11 @@
 manuscript = no_numerical_exp_report
 references = $(wildcard *.bib)
-latexopt   = -halt-on-error -file-line-error
+latexopt   = -halt-on-error -file-line-error -shell-escape
 
 all: all-via-pdf
 
 all-via-pdf: $(manuscript).tex $(references)
-	pdflatex $(latexopt) --shell-escape $<
+	pdflatex $(latexopt) $<
 	bibtex $(manuscript).aux
 	pdflatex $(latexopt) $<
 	pdflatex $(latexopt) $<
