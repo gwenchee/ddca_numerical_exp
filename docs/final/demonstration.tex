@@ -11,13 +11,19 @@ of their strengths and weaknesses.
 And how their overall performance demonstrates \deploy's 
 capabilities. 
 
-The basis of comparison for the numerical experiments are: 
-the number of time steps where demand exceeds supply, residuals
-and $\chi^2$ goodness of fit test. 
+The main constraint that \deploy is trying to meet is to 
+minimize the number of time steps where demand exceeds supply. 
+Therefore, the basis of comparison for the numerical experiments 
+are the number of time steps where demand exceeds supply 
+(under supply). 
 
 The numerical experiments are broken down into four types: 
 front-end facility deployment, back-end facility deployment, 
 closed fuel cycle and transition scenario. 
+
+All the results and code used to produce these numerical 
+experiments can be found in their respective ipython
+notebooks in the demonstrations directory of \cite{deploydoi_2019}. 
 
 \subsection{Front-end Deployment}
 
@@ -40,7 +46,107 @@ closed fuel cycle and transition scenario.
 	\end{tabular}
 \end{table}
 
-\subsection{Back-end Deployment}
+\begin{table}[h]
+	\centering
+	\caption {Test scenario 1 under supply results for each algorithm and commodity}
+	\label{tab:scenario1}
+	\begin{tabular}{|l|l|}
+		\hline
+		\textbf{\shortstack{Prediction \\ Algorithm}} & \textbf{\shortstack{Fuel \\ Undersupply}}\\
+		\hline
+		ma & 0\\
+		\hline
+		arch & 0\\
+		\hline
+		arma & 0\\
+		\hline
+		exp smoothing & 0\\
+		\hline
+		fft &  32\\
+		\hline
+		holt winters & 0\\
+		\hline
+		poly & 21\\
+		\hline
+	\end{tabular}
+\end{table}
+
+Table \ref{tab:scenario1} shows that the ma, arch, arma, exp 
+smoothing and holt winters methods perform best to minimize
+ undersupply of fuel during the simulation. 
+
+\subsubsection{Test Scenario 2}
+
+\begin{table}[h]
+	\centering
+	\caption {Test scenario 2 under supply results for each algorithm and commodity}
+	\label{tab:scenario1}
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textbf{\shortstack{Prediction \\ Algorithm}} & \textbf{\shortstack{Power \\ Undersupply}}& \textbf{\shortstack{Fuel \\ Undersupply}}\\
+		\hline
+		ma & 0 & 28\\
+		\hline
+		arch & 0 & 24\\
+		\hline
+		arma & 0 & 12\\
+		\hline
+		exp smoothing & 0 & 24\\
+		\hline
+		fft &  23 & 3\\
+		\hline
+		holt winters & 0 & 24\\
+		\hline
+		poly & 40 & 19\\
+		\hline
+	\end{tabular}
+\end{table}
+
+Table \ref{tab:scenario2} shows that the arch, arma, exp 
+smoothing, holt winters and ma methods perform best to minimize
+undersupply of power during the simulation.
+Whereas, the fft method performs best to minimize undersupply of 
+fuel during the simulation. 
+
+\subsubsection{Test Scenario 3}
+
+
+\begin{table}[h]
+	\centering
+	\caption {Test scenario 3 under supply results for each algorithm and commodity}
+	\label{tab:scenario1}
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textbf{\shortstack{Prediction \\ Algorithm}} & \textbf{\shortstack{Power \\ Undersupply}}& \textbf{\shortstack{Fuel \\ Undersupply}}\\
+		\hline
+		ma & 0 & 28\\
+		\hline
+		arch & 0 & 24\\
+		\hline
+		arma & 0 & 12\\
+		\hline
+		exp smoothing & 0 & 24\\
+		\hline
+		fft &  23 & 3\\
+		\hline
+		holt winters & 0 & 24\\
+		\hline
+		poly & 40 & 19\\
+		\hline
+	\end{tabular}
+\end{table}
+
+Table \ref{tab:scenario3} shows that the fft method performs best 
+to minimize undersupply of power and fuel during the simulation. 
+
+\subsubsection{Test Scenario 4}
+Table \ref{tab:scenario4} shows that the arch, exp 
+smoothing, holt winters and ma methods perform best to minimize
+undersupply of power during the simulation.
+Whereas, the fft and poly method performs best to minimize undersupply of 
+fuel during the simulation. 
+
+\subsubsection{Back-end Deployment}
 
 \begin{table}[h]
 	\centering
@@ -56,6 +162,9 @@ closed fuel cycle and transition scenario.
 		\hline
 	\end{tabular}
 \end{table}
+
+\subsubsection{Test Scenario 5}
+
 
 \subsection{Closed Fuel Cycle}
 
