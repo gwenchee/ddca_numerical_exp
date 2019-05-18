@@ -113,6 +113,8 @@ under supply of power during the simulation.
 Whereas, the fft method performs best to minimize under supply of 
 fuel during the simulation. 
 
+Realizing that 
+
 \subsubsection{Test Scenario 3}
 
 
@@ -162,7 +164,7 @@ to minimize under supply of power and fuel during the simulation.
 		\hline
 		exp smoothing & 0 & 14\\
 		\hline
-		fft &  7 & 7\\
+		fft &  8 & 7\\
 		\hline
 		holt winters & 0 & 14\\
 		\hline
@@ -204,19 +206,19 @@ fuel during the simulation.
 		\hline
 		\textbf{\shortstack{Prediction \\ Algorithm}} & \textbf{\shortstack{Power \\ Under Supply}}& \textbf{\shortstack{Fuel \\ Under Supply}} & \textbf{\shortstack{Spent Fuel \\ Under Capacity}}\\
 		\hline
-		ma & 0 & 28 & 7\\
+		ma & 0 & 28 & 5\\
 		\hline
-		arch & 0 & 24 & 7\\
+		arch & 0 & 24 & 5\\
 		\hline
-		arma & 0 & 12 & 7\\
+		arma & 0 & 12 & 5\\
 		\hline
-		exp smoothing & 0 & 24 & 7\\
+		exp smoothing & 0 & 24 & 5\\
 		\hline
 		fft &  23 & 3 & 8\\
 		\hline
-		holt winters & 0 & 24 & 7\\
+		holt winters & 0 & 24 & 5\\
 		\hline
-		poly & 40 & 19 & 7\\
+		poly & 41 & 19 & 5\\
 		\hline
 	\end{tabular}
 \end{table}
@@ -240,37 +242,40 @@ simulation.
 		\hline
 		\textbf{\shortstack{Prediction \\ Algorithm}} & \textbf{\shortstack{Power \\ Under Supply}}& \textbf{\shortstack{Fuel \\ Under Supply}} & \textbf{\shortstack{Spent Fuel \\ Under Capacity}} & \textbf{\shortstack{Cool Spent Fuel \\ Under Capacity}}\\
 		\hline
-		ma & 0 & 28 & 3 & 11\\
+		ma & 0 & 28 & 1 & 5\\
 		\hline
-		arch & 0 & 24 & 3 & 14\\
+		arch & 0 & 24 & 1 & 8\\
 		\hline
-		arma & 0 & 12 & 3 & 14\\
+		arma & 0 & 12 & 1 & 8\\
 		\hline
-		exp smoothing & 0 & 24 & 3 & 11 \\
+		exp smoothing & 0 & 24 & 1 & 5 \\
 		\hline
-		fft &  23 & 3 & 4 & 8\\
+		fft &  23 & 3 & 1 & 1\\
 		\hline
-		holt winters & 0 & 24 & 3 & 11\\
+		holt winters & 0 & 24 & 1 & 5\\
 		\hline
-		poly & 40 & 19 & 3 & 7\\
+		poly & 41 & 19 & 1 & 1\\
 		\hline
 	\end{tabular}
 \end{table}
 
+\begin{comment}
 
 \subsection{Closed Fuel Cycle}
 
 \begin{table}[h]
-	\centering
-	\caption {Closed Fuel Cycle Deployment Numerical Experiment}
-	\label{tab:cfcnum}
-	\begin{tabular}{|l|p{2.75cm}|p{2.5cm}|p{2.1cm}|l|}
-		\hline
-		\textbf{\shortstack{Test \\ Scenario}} & \textbf{\shortstack{Facilities \\ Present}} & \textbf{\shortstack{Reactor \\ Parameters}} & \textbf{\shortstack{Driving \\ Commodity}} & \textbf{\shortstack{Demand \\ Equation}}\\
-		\hline
-		7 & \texttt{Source}, \texttt{Reactors}, \texttt{Separation Facilities}, \texttt{Mixer Facilities} & Cycle time: 1, Refuel time: 0 & Power & 1000t\\
-		\hline
-	\end{tabular}
+    \centering
+    \caption {Closed Fuel Cycle Deployment Numerical Experiment}
+    \label{tab:cfcnum}
+    \begin{tabular}{|l|p{2.75cm}|p{2.5cm}|p{2.1cm}|l|}
+        \hline
+        \textbf{\shortstack{Test \\ Scenario}} & \textbf{\shortstack{Facilities \\ Present}} & \textbf{\shortstack{Reactor \\ Parameters}} & \textbf{\shortstack{Driving \\ Commodity}} & \textbf{\shortstack{Demand \\ Equation}}\\
+        \hline
+        7 & \texttt{Source}, \texttt{Reactors}, \texttt{Separation Facilities}, \texttt{Mixer Facilities} & Cycle time: 1, Refuel time: 0 & Power & 1000t\\
+        \hline
+    \end{tabular}
 \end{table}
 
 \subsection{Transition Scenario}
+
+\end{comment}
